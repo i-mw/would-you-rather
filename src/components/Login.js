@@ -4,7 +4,10 @@ import { addAuthedUser } from "../actions/authedUser";
 
 class Login extends Component {
   login = (e, id) => {
-    // todo: dispatch
+    const { dispatch } = this.props;
+
+    dispatch(addAuthedUser(id));
+    // todo: Redirect to where the user came from
   };
 
   render() {
