@@ -5,6 +5,7 @@ import LoadingBar from "react-redux-loading-bar";
 import Login from "./Login";
 import Nav from "./Nav"
 import QuestionCard from "./QuestionCard"
+import QuestionList from './QuestionList'
 
 class App extends Component {
   componentDidMount() {
@@ -22,9 +23,10 @@ class App extends Component {
         {loading === 0 && (
           <>
             <p>authed user is: {authedUser}</p>
-            <QuestionCard id='xj352vofupe1dqz9emx13r'/>
+            <QuestionList/>
+            {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
             {/* <Nav /> */}
-            {/* <Login/> */}
+            <Login/>
           </>
         )}
       </>
