@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
 import Login from "./Login";
+import Nav from "./Nav"
 
 class App extends Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class App extends Component {
         {!loading && (
           <>
             <p>authed user is: {authedUser}</p>
-            <Login />
+            <Nav />
           </>
         )}
       </>
