@@ -10,10 +10,10 @@ export function getInitialData() {
   return Promise.all([
     _getUsers(),
     _getQuestions()
-  ]).then(([questions, users]) => {
-    questions,
-    users
-  })
+  ]).then(([users, questions]) => ({
+    users,
+    questions
+  }))
 }
 
 // Receives object containing {author, optionOneText, optionTwoText}
