@@ -22,6 +22,7 @@ class App extends Component {
           <>
             <p>authed user is: {authedUser}</p>
             <Nav />
+            <Login/>
           </>
         )}
       </>
