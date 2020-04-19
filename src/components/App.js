@@ -9,6 +9,7 @@ import QuestionList from './QuestionList'
 import NewQuestion from './NewQuestion'
 import UserRank from './UserRank'
 import Leaderboard from "./Leaderboard";
+import UnansweredQuestionDetails from './UnansweredQuestionDetails'
 
 
 class App extends Component {
@@ -27,11 +28,12 @@ class App extends Component {
         {initialLoading !== 0 && (
           <>
             <p>authed user is: {authedUser}</p>
-            <Leaderboard/>
+            <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/>
+            {/* <Leaderboard/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
             <Login/>
-            <NewQuestion/>
-            {/* <QuestionList/> */}
+            {/* <NewQuestion/> */}
+            <QuestionList/>
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
             {/* <Nav /> */}
           </>
