@@ -45,7 +45,7 @@ class QuestionList extends Component {
         <ul className="list">
           {(showingUnanswered ? unansweredQuestions : answeredQuestions).map(
             (questionId) => (
-              <li key={questionId} className="question-card">
+              <li key={questionId} className="question-card rounded-borders">
                 <QuestionCard id={questionId} />
               </li>
             )

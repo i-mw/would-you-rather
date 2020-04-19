@@ -5,20 +5,20 @@ function QuestionCard(props) {
   const { authorName, authorAvatarUrl, questionId, optionOneCroppedText } = props;
 
   return (
-    <div>
-      <div>
+    <>
+      <div className="author-name light-gray-background">
         <p>{`${authorName} asks:`}</p>
       </div>
-      <div>
+      <div className="author-avatar">
         <img src={authorAvatarUrl} alt={`${authorName}'s avatar`} />
       </div>
-      <div>
+      <div className="question-preview">
         <p>Would you rather</p>
         <p>{optionOneCroppedText}</p>
         {/* todo: replace this with <Link> */}
         <a href={`/questions/${questionId}`}>View Poll</a>
       </div>
-    </div>
+    </>
   );
 }
 
