@@ -32,7 +32,8 @@ class App extends Component {
             <Nav />
             <div className="container">
               {/* <Login/> */}
-              <QuestionList/>
+              {/* <QuestionList/> */}
+              <NewQuestion/>
             </div>
             {/* <p>authed user is: {authedUser}</p> */}
             {/* <NotFound type='PaGe'/> */}
@@ -41,7 +42,6 @@ class App extends Component {
             {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
             {/* <Leaderboard/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
-            {/* <NewQuestion/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
           </>
         )}
