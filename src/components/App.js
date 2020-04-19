@@ -16,12 +16,12 @@ class App extends Component {
   }
 
   render() {
-    const { loading, authedUser } = this.props;
+    const { initialLoading, authedUser } = this.props;
 
     return (
       <>
         <LoadingBar />
-        {loading === 0 && (
+        {initialLoading !== 0 && (
           <>
             <p>authed user is: {authedUser}</p>
             <Login/>
@@ -36,9 +36,9 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ loadingBar, authedUser }) {
+function mapStateToProps({ loadingBar, authedUser, questions }) {
   return {
-    loading: loadingBar.default,
+    initialLoading: Object.keys(questions).length,
     authedUser,
   };
 }
