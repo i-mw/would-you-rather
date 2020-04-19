@@ -148,12 +148,12 @@ nav div.session-details {
   margin-bottom: 0;
 }
 
-.question-card .author-name p {
+.author-name p {
   padding: 8px;
   padding-left: 15px;
 }
 
-.question-card .author-avatar {
+.author-avatar {
   width: 30%;
   display: inline-block;
   vertical-align: middle;
@@ -162,11 +162,11 @@ nav div.session-details {
   padding-bottom: 15px;
 }
 
-.question-card .author-avatar img {
+.author-avatar img {
   width: 70px;
 }
 
-.question-card .question-preview {
+.question-preview {
   width: 70%;
   display: inline-block;
   vertical-align: middle;
@@ -313,4 +313,42 @@ nav div.session-details {
 
 .user-card .user-score p:first-child {
   border-bottom: 1px solid rgb(194, 193, 193);
+}
+
+/* Unanswered question */
+.unanswered-question .author-avatar img {
+  width: 90px;
+}
+
+.unanswered-question .question-preview {
+  border-left: 1px solid rgb(194, 193, 193);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.unanswered-question .question-preview > * {
+  margin: 0;
+}
+
+.unanswered-question .question-preview p:first-child {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.unanswered-question .question-preview p:last-of-type {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.unanswered-question .question-preview button {
+  font-size: 1em;
+  font-weight: bold;
+  height: 60px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.unanswered-question .question-preview button:focus {
+  outline: 0;
 }

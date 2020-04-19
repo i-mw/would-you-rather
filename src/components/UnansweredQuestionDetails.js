@@ -25,20 +25,20 @@ class UnansweredQuestionDetails extends Component {
     } = this.props;
 
     return (
-      <div>
-        <div>
+      <div className="unanswered-question rounded-borders">
+        <div className="author-name light-gray-background">
           <p>{`${authorName} asks:`}</p>
         </div>
-        <div>
+        <div className="author-avatar">
           <img src={authorAvatar} alt={`${authorName}'s avatar`} />
         </div>
-        <div>
+        <div className="question-preview">
           <p>Would You Rather ..</p>
-          <button onClick={(e) => this.handleClick(e, "optionOne")}>
+          <button className="dark-gray-background" onClick={(e) => this.handleClick(e, "optionOne")}>
             {optionOneText}
           </button>
           <p>-OR-</p>
-          <button onClick={(e) => this.handleClick(e, "optionTwo")}>
+          <button className="dark-gray-background" onClick={(e) => this.handleClick(e, "optionTwo")}>
             {optionTwoText}
           </button>
         </div>

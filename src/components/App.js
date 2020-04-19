@@ -31,16 +31,16 @@ class App extends Component {
           <>
             <Nav />
             <div className="container">
-              <Login/>
+              {/* <Login/> */}
               {/* <QuestionList/> */}
               {/* <NewQuestion/> */}
               {/* <Leaderboard/> */}
+              <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/>
             </div>
             {/* <p>authed user is: {authedUser}</p> */}
             {/* <NotFound type='PaGe'/> */}
             {/* <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <AnsweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
-            {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
           </>
