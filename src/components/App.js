@@ -31,7 +31,8 @@ class App extends Component {
           <>
             <Nav />
             <div className="container">
-              <Login/>
+              {/* <Login/> */}
+              <QuestionList/>
             </div>
             {/* <p>authed user is: {authedUser}</p> */}
             {/* <NotFound type='PaGe'/> */}
@@ -41,7 +42,6 @@ class App extends Component {
             {/* <Leaderboard/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
             {/* <NewQuestion/> */}
-            {/* <QuestionList/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
           </>
         )}

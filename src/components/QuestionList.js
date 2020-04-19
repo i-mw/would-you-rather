@@ -23,10 +23,10 @@ class QuestionList extends Component {
     const { answeredQuestions, unansweredQuestions } = this.props;
 
     return (
-      <div>
+      <div className="questions-list rounded-borders">
         <div className="category-select">
           <button
-            className={showingUnanswered ? "active-tab" : "inactive-tab"}
+            className={`${showingUnanswered ? "active-tab" : "inactive-tab"} rounded-borders`}
             onClick={(e) => {
               this.toggleShowingUnanswered(e, true);
             }}
@@ -34,7 +34,7 @@ class QuestionList extends Component {
             Unanswered Questions
           </button>
           <button
-            className={!showingUnanswered ? "active-tab" : "inactive-tab"}
+            className={`${!showingUnanswered ? "active-tab" : "inactive-tab"} rounded-borders`}
             onClick={(e) => {
               this.toggleShowingUnanswered(e, false);
             }}
@@ -42,10 +42,10 @@ class QuestionList extends Component {
             Answered Questions
           </button>
         </div>
-        <ul>
+        <ul className="list">
           {(showingUnanswered ? unansweredQuestions : answeredQuestions).map(
             (questionId) => (
-              <li key={questionId}>
+              <li key={questionId} className="question-card">
                 <QuestionCard id={questionId} />
               </li>
             )

@@ -56,15 +56,6 @@ nav ul.tabs {
   padding-right: 40px;
 }
 
-/* todo: modify later */
-.active-tab {
-  background-color: rgb(231, 231, 231);
-}
-
-.inactive-tab {
-  background-color: white;
-}
-
 nav div.session-details {
   width: 35%;
   float: left;
@@ -119,3 +110,29 @@ nav div.session-details {
   margin-bottom: 5px;
 }
 
+/* Questions list */
+.questions-list .category-select {
+
+}
+
+.category-select button {
+  width: 50%;
+  padding: 10px;
+}
+
+.category-select button:focus {
+  outline: 0;
+}
+
+.active-tab {
+  background-color: rgb(231, 231, 231);
+}
+
+.inactive-tab {
+  background-color: white;
+}
+
+.questions-list .list {
+  list-style-type: none;
+  padding: 25px;
+}
