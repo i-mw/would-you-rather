@@ -8,6 +8,8 @@ import QuestionCard from "./QuestionCard"
 import QuestionList from './QuestionList'
 import NewQuestion from './NewQuestion'
 import UserRank from './UserRank'
+import Leaderboard from "./Leaderboard";
+
 
 class App extends Component {
   componentDidMount() {
@@ -25,9 +27,10 @@ class App extends Component {
         {initialLoading !== 0 && (
           <>
             <p>authed user is: {authedUser}</p>
-            <UserRank id='sarahedo' rank={2}/>
-            {/* <Login/> */}
-            {/* <NewQuestion/> */}
+            <Leaderboard/>
+            {/* <UserRank id='sarahedo' rank={2}/> */}
+            <Login/>
+            <NewQuestion/>
             {/* <QuestionList/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
             {/* <Nav /> */}
