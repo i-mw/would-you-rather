@@ -29,18 +29,18 @@ class App extends Component {
         <LoadingBar />
         {initialLoading !== 0 && (
           <>
-            <p>authed user is: {authedUser}</p>
-            <NotFound type='PaGe'/>
+            {/* <p>authed user is: {authedUser}</p> */}
+            {/* <NotFound type='PaGe'/> */}
             {/* <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <AnsweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
             {/* <Leaderboard/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
-            {/* <Login/> */}
+            <Nav />
+            <Login/>
             {/* <NewQuestion/> */}
             {/* <QuestionList/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
-            {/* <Nav /> */}
           </>
         )}
       </>
