@@ -27,6 +27,7 @@
   margin-top: 40px;
 }
 
+
 /* nav */
 nav {
   border-bottom: 1px solid rgb(194, 193, 193);
@@ -73,6 +74,7 @@ nav div.session-details {
   width: 25px;
 }
 
+
 /* Login */
 .login {
   width: 100%;
@@ -110,6 +112,7 @@ nav div.session-details {
   margin-bottom: 5px;
 }
 
+
 /* Questions list */
 .category-select button {
   width: 50%;
@@ -133,6 +136,7 @@ nav div.session-details {
   list-style-type: none;
   padding: 25px;
 }
+
 
 /* Question Card */
 .question-card {
@@ -179,6 +183,7 @@ nav div.session-details {
 .question-preview > p:nth-child(2) {
   color: rgb(109, 105, 105);
 }
+
 
 /* New Question */
 .new-question {
@@ -230,3 +235,81 @@ nav div.session-details {
   color: rgb(185, 184, 184);
 }
 
+
+/* Leaderboard */
+.leaderboard {
+  list-style-type: none;
+}
+
+.user-card {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 15px;;
+}
+
+.user-card .user-ranking {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: rgb(104, 104, 104);
+}
+
+.user-card .user-ranking p {
+  padding: 8px;
+}
+
+.user-card .user-avatar {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-card .user-avatar img {
+  width: 70px;
+}
+
+.user-card .user-details {
+  display: inline-block;
+  width: 57%;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-right: 1px solid rgb(194, 193, 193);
+  border-left: 1px solid rgb(194, 193, 193);
+  padding: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.user-card .user-details .user-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.user-card .user-details .user-answered ,
+.user-card .user-details .user-created {
+  margin-bottom: 10px;
+}
+
+.user-card .user-details .user-answered p,
+.user-card .user-details .user-created p {
+  display: inline-block;
+  width: 90%
+}
+
+.user-card .user-score {
+  display: inline-block;
+  width: 15%;
+  vertical-align: middle;
+}
+
+.user-card .user-score p {
+  padding: 12px;
+  text-align: center;
+}
+
+.user-card .user-score p:first-child {
+  border-bottom: 1px solid rgb(194, 193, 193);
+}

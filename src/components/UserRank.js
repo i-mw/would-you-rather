@@ -12,30 +12,29 @@ function UserRank(props) {
   } = props;
 
   return (
-    <div>
-      <div>
-        <p>Rank</p>
+    <>
+      <div className="user-ranking rounded-borders light-gray-background">
         <p>{rank}</p>
       </div>
-      <div>
+      <div className="user-avatar">
         <img src={userAvatar} alt={`${userName}'s avatar`} />
       </div>
-      <div>
-        <p>{userName}</p>
-        <div>
+      <div className="user-details">
+        <p className="user-name">{userName}</p>
+        <div className="user-answered">
           <p>Answered questions</p>
           <span>{answeredQNum}</span>
         </div>
-        <div>
+        <div className="user-created">
           <p>Created questions</p>
           <span>{createdQNum}</span>
         </div>
       </div>
-      <div>
+      <div className="user-score rounded-borders">
         <p>Score</p>
         <p>{score}</p>
       </div>
-    </div>
+    </>
   );
 }
 

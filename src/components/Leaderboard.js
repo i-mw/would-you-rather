@@ -6,10 +6,10 @@ function Leaderboard(props) {
   const {rankedUserIds} = props
 
   return (
-    <ul>
+    <ul className='leaderboard'>
       {
         rankedUserIds.map((userId, index) => (
-          <li key={userId}>
+          <li key={userId} className='user-card rounded-borders'>
             <UserRank id={userId} rank={index+1}/>
           </li>
         ))

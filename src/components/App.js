@@ -33,14 +33,14 @@ class App extends Component {
             <div className="container">
               {/* <Login/> */}
               {/* <QuestionList/> */}
-              <NewQuestion/>
+              {/* <NewQuestion/> */}
+              <Leaderboard/>
             </div>
             {/* <p>authed user is: {authedUser}</p> */}
             {/* <NotFound type='PaGe'/> */}
             {/* <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <AnsweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
-            {/* <Leaderboard/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
           </>
