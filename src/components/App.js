@@ -12,6 +12,7 @@ import Leaderboard from "./Leaderboard";
 import UnansweredQuestionDetails from './UnansweredQuestionDetails'
 import AnsweredQuestionDetails from "./AnsweredQuestionDetails";
 import QuestionDetails from './QuestionDetails'
+import NotFound from "./NotFound";
 
 class App extends Component {
   componentDidMount() {
@@ -29,12 +30,13 @@ class App extends Component {
         {initialLoading !== 0 && (
           <>
             <p>authed user is: {authedUser}</p>
+            <NotFound type='PaGe'/>
             {/* <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <AnsweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
-            <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/>
+            {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
             {/* <Leaderboard/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
-            <Login/>
+            {/* <Login/> */}
             {/* <NewQuestion/> */}
             {/* <QuestionList/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
