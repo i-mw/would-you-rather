@@ -24,6 +24,6 @@ export function saveQuestion(info) {
 
 // Receives object containing {authedUser, qid, answer}
 // Returns nothing
-export function saveQuestionAnser(info) {
+export function saveQuestionAnswer(info) {
   return _saveQuestionAnswer(info)
 }

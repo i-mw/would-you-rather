@@ -1,6 +1,10 @@
-import { getInitialData, saveQuestion } from "../utils/api";
-import { receiveQuestions, addQuestionToQuestions } from "./questions";
-import { receiveUsers, addQuestionToUser } from "./users";
+import { getInitialData, saveQuestion, saveQuestionAnswer } from "../utils/api";
+import {
+  receiveQuestions,
+  addQuestionToQuestions,
+  addVoteToQuestion,
+} from "./questions";
+import { receiveUsers, addQuestionToUser, addVoteToUser } from "./users";
 import { showLoading } from "react-redux-loading-bar";
 import { hideLoading } from "react-redux-loading-bar";
 
@@ -18,9 +22,22 @@ export function handleInitialData() {
 export function handleAddQuestion(author, optionOneText, optionTwoText) {
   return (dispatch) => {
     dispatch(showLoading());
-    return saveQuestion({ author, optionOneText, optionTwoText }).then((question) => {
-      dispatch(addQuestionToQuestions(question));
-      dispatch(addQuestionToUser(question));
+    return saveQuestion({ author, optionOneText, optionTwoText }).then(
+      (question) => {
+        dispatch(addQuestionToQuestions(question));
+        dispatch(addQuestionToUser(question));
+        dispatch(hideLoading());
+      }
+    );
+  };
+}
+
+export function handleAddVote(vote) {
+  return (dispatch) => {
+    dispatch(showLoading());
+    return saveQuestionAnswer(vote).then(() => {
+      dispatch(addVoteToQuestion(vote));
+      dispatch(addVoteToUser(vote));
       dispatch(hideLoading());
     });
   };

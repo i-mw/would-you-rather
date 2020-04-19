@@ -13,7 +13,7 @@ class UnansweredQuestionDetails extends Component {
       answer,
     };
 
-    // todo: dispatch from here
+    dispatch(handleAddVote(vote));
   };
 
   render() {
