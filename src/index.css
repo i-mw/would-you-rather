@@ -101,10 +101,11 @@ nav div.session-details {
 
 .login .users-list li {
   max-width: 200px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   margin-right: auto;
   margin-left: auto;
   padding: 10px;
+  cursor: pointer;
 }
 
 .login .users-list img {

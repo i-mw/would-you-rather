@@ -31,10 +31,10 @@ class App extends Component {
           <>
             <Nav />
             <div className="container">
-              {/* <Login/> */}
+              <Login/>
               {/* <QuestionList/> */}
               {/* <NewQuestion/> */}
-              <Leaderboard/>
+              {/* <Leaderboard/> */}
             </div>
             {/* <p>authed user is: {authedUser}</p> */}
             {/* <NotFound type='PaGe'/> */}
