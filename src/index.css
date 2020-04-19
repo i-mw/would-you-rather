@@ -7,7 +7,7 @@
 
 .rounded-borders {
   border: 1px solid rgb(194, 193, 193);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .light-gray-background {
@@ -18,6 +18,13 @@
 .dark-gray-background {
   color: white;
   background-color: rgb(150, 150, 150);
+}
+
+.container {
+  max-width: 550px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
 }
 
 /* nav */
@@ -74,3 +81,41 @@ nav div.session-details {
 .session-details img {
   width: 25px;
 }
+
+/* Login */
+.login {
+  width: 100%;
+  text-align: center;
+}
+
+.login .heading {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.login .heading h2 {
+  margin-bottom: 10px;
+}
+
+.login .details {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.login .details>p {
+  margin-bottom: 30px;
+}
+
+.login .users-list li {
+  max-width: 200px;
+  margin-bottom: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+}
+
+.login .users-list img {
+  width: 40px;
+  margin-bottom: 5px;
+}
+

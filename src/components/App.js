@@ -29,6 +29,10 @@ class App extends Component {
         <LoadingBar />
         {initialLoading !== 0 && (
           <>
+            <Nav />
+            <div className="container">
+              <Login/>
+            </div>
             {/* <p>authed user is: {authedUser}</p> */}
             {/* <NotFound type='PaGe'/> */}
             {/* <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
@@ -36,8 +40,6 @@ class App extends Component {
             {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
             {/* <Leaderboard/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}
-            <Nav />
-            <Login/>
             {/* <NewQuestion/> */}
             {/* <QuestionList/> */}
             {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}

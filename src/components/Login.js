@@ -14,12 +14,12 @@ class Login extends Component {
     const { users } = this.props;
 
     return (
-      <div className="login">
-        <div className="heading">
+      <div className="login rounded-borders">
+        <div className="heading light-gray-background">
           <h2>Welcome to the Would You Rather Game</h2>
           <p>please sign in to continue</p>
         </div>
-        <div>
+        <div className="details">
           <p>Sign in using one of the existing users</p>
           <ul className="users-list">
             {Object.keys(users).map((userId) => {
@@ -28,7 +28,7 @@ class Login extends Component {
               return (
                 <li
                   key={user.id}
-                  className="user"
+                  className="user dark-gray-background rounded-borders"
                   onClick={(e) => {
                     this.login(e, user.id);
                   }}
