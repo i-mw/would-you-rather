@@ -36,32 +36,30 @@ nav {
   margin-left: auto;
 }
 
-nav::after {
-  content: '0';
-  display: block;
-  clear: both;
-  height: 0;
-  visibility: hidden;
-}
-
 nav ul.tabs {
   width: 60%;
-  float: left;
+  display: inline-block;
   list-style-type: none;
   height: 100%;
   padding-top: 20px;
   padding-bottom: 12px;
+  /* border: 1px dashed blue; */
 }
+
 .tabs li {
   display: inline;
   padding-right: 40px;
 }
 
 nav div.session-details {
-  width: 35%;
-  float: left;
+  width: 40%;
+  display: inline-block;
   padding-top: 20px;
   padding-bottom: 12px;
+  /* border: 1px dashed red; */
+  text-align: right;
+  height: 50px;
+  vertical-align: bottom;
 }
 
 .session-details > * {
@@ -74,6 +72,9 @@ nav div.session-details {
   width: 25px;
 }
 
+.session-details button {
+  margin-right: 0;
+}
 
 /* Login */
 .login {
