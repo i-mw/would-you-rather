@@ -51,9 +51,6 @@ function AnsweredQuestionDetails(props) {
 }
 
 function mapStateToProps({ users, questions, authedUser }, { qid }) {
-  // todo: remove this line after adding routing
-  authedUser = authedUser ? authedUser : "sarahedo";
-    
   const question = questions[qid];
   const author = users[question.author];
   const totalVotes =
