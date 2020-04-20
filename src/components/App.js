@@ -35,10 +35,10 @@ class App extends Component {
               {/* <QuestionList/> */}
               {/* <NewQuestion/> */}
               {/* <Leaderboard/> */}
-              <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/>
+              {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
+              <NotFound type='page'/>
             </div>
             {/* <p>authed user is: {authedUser}</p> */}
-            {/* <NotFound type='PaGe'/> */}
             {/* <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <AnsweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
             {/* <UserRank id='sarahedo' rank={2}/> */}

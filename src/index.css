@@ -421,3 +421,15 @@ nav div.session-details {
 .answered-question .option .votes {
   color: rgb(61, 61, 61);
 }
+
+
+/* Not Found */
+
+.not-found {
+  padding: 30px;
+  text-align: center;
+}
+
+.not-found h2 {
+  margin-bottom: 20px;
+}
