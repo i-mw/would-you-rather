@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { removeAuthedUser } from "../actions/authedUser";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 class Nav extends Component {
   logout = (e) => {
     e.preventDefault();
-    const { dispatch } = this.props;
+    const { dispatch, history } = this.props;
 
     dispatch(removeAuthedUser());
+    // Make user go home after logging out and logging in
+    // again by default. not to the last page before logging out
+    history.push('/')
   };
 
   render() {
@@ -43,4 +46,4 @@ function mapStateToProps({ authedUser, users }) {
   };
 }
 
-export default connect(mapStateToProps)(Nav);
+export default withRouter(connect(mapStateToProps)(Nav));

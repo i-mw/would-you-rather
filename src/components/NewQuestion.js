@@ -30,7 +30,7 @@ class NewQuestion extends Component {
       optionTwo: "",
     });
 
-    // todo: Check if you are required to redirect to home page
+    // todo: redirect to home page
   };
 
   render() {
