@@ -5,15 +5,18 @@ import App from "./components/App";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./reducers";
-import middleware from './middleware'
+import middleware from "./middleware";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const store = createStore(reducer, middleware);
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <Router>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

@@ -2,9 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import UnansweredQuestionDetails from "./UnansweredQuestionDetails";
 import AnsweredQuestionDetails from "./AnsweredQuestionDetails";
+import NotFound from "./NotFound";
 
 function QuestionDetails(props) {
-  const { typeOfQuestion, qid } = props;
+  const { typeOfQuestion, qid, questionExist } = props;
+
+  if (!questionExist) {
+    return <NotFound type="question"/>
+  }
 
   if (typeOfQuestion === "unanswered") {
     return <UnansweredQuestionDetails qid={qid} />;
@@ -13,8 +18,9 @@ function QuestionDetails(props) {
   }
 }
 
-function mapStateToProps({ users, authedUser }, { qid }) {
-  // todo: get question id from Route not from direct props
+function mapStateToProps({ users, authedUser, questions }, { match }) {
+  const qid = match.params.id;
+  const questionExist = questions[qid] ? true: false;
   
   // todo: remove this line after adding routing
     authedUser = authedUser ? authedUser : "sarahedo";
@@ -24,6 +30,7 @@ function mapStateToProps({ users, authedUser }, { qid }) {
       ? "answered"
       : "unanswered",
     qid,
+    questionExist
   };
 }
 

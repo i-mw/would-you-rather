@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
+import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import Nav from "./Nav"
 import QuestionCard from "./QuestionCard"
@@ -31,10 +32,21 @@ class App extends Component {
           <>
             <Nav />
             <div className="container">
-              <Login/>
+              <Switch>
+                <Route exact path='/' component={QuestionList}/>
+                <Route exact path='/add' component={NewQuestion}/>
+                <Route exact path='/leaderboard' component={Leaderboard}/>
+                <Route exact path='/login' component={Login}/>
+                <Route exact path='/questions/:id' component={QuestionDetails}/>
+                <Route render={() => (<NotFound type='page'/>)}/>
+              </Switch>
+
+
+
               {/* <QuestionList/> */}
               {/* <NewQuestion/> */}
               {/* <Leaderboard/> */}
+              {/* <Login/> */}
               {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
               {/* <NotFound type='page'/> */}
             </div>

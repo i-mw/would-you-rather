@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addAuthedUser } from "../actions/authedUser";
 
+// todo: Redirect if the user is already logged in
 class Login extends Component {
   login = (e, id) => {
     const { dispatch } = this.props;
