@@ -12,7 +12,7 @@ const store = createStore(reducer, middleware);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router basename={'/would-you-rather'}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
