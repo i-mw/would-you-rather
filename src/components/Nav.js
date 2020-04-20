@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { removeAuthedUser } from "../actions/authedUser";
+import { NavLink } from "react-router-dom";
 
 class Nav extends Component {
   logout = (e) => {
@@ -13,14 +14,13 @@ class Nav extends Component {
 
   render() {
     const { authedUser } = this.props;
-    const tabs = ["Home", "New Question", "Leader Board"];
-    //todo: Add NavLinks to navigation tabs
+    const tabs = [["Home", '/'], ["New Question", '/add'], ["Leader Board", '/leaderboard']];
 
     return (
       <nav>
           <ul className="tabs">
             {tabs.map((tab) => (
-              <li key={tab}>{tab}</li>
+              <li key={tab[0]}><NavLink activeClassName='active-page' exact to={tab[1]}>{tab[0]}</NavLink></li>
             ))}
           </ul>
           {authedUser && (

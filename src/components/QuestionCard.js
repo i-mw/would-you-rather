@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 function QuestionCard(props) {
   const { authorName, authorAvatarUrl, questionId, optionOneCroppedText } = props;
@@ -15,8 +16,7 @@ function QuestionCard(props) {
       <div className="question-preview">
         <p>Would you rather</p>
         <p>{optionOneCroppedText}</p>
-        {/* todo: replace this with <Link> */}
-        <a href={`/questions/${questionId}`}>View Poll</a>
+        <Link to={`/questions/${questionId}`}>View Poll</Link>
       </div>
     </>
   );
