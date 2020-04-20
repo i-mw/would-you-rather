@@ -20,7 +20,7 @@ class NewQuestion extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { authedUser, dispatch } = this.props;
+    const { authedUser, dispatch, history } = this.props;
     const { optionOne, optionTwo } = this.state;
 
     dispatch(handleAddQuestion(authedUser, optionOne, optionTwo));
@@ -30,7 +30,8 @@ class NewQuestion extends Component {
       optionTwo: "",
     });
 
-    // todo: redirect to home page
+    // Redirect to home after submitting
+    history.push('/')
   };
 
   render() {
