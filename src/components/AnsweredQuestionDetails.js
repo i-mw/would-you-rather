@@ -12,38 +12,38 @@ function AnsweredQuestionDetails(props) {
   } = props;
 
   return (
-    <div>
-      <div>
+    <div className="answered-question rounded-borders">
+      <div className="author-name light-gray-background">
         <p>{`Asked by ${userName}`}</p>
       </div>
-      <div>
+      <div className="author-avatar">
         <img src={userAvatar} alt={`${userName}'s avatar`} />
       </div>
-      <div>
+      <div className="question-preview">
         <p>Results:</p>
-        <div>
+        <div className="option light-gray-background rounded-borders">
           {authedUserVote === "optionOne" && (
-            <p>
+            <p className='your-vote'>
               Your
               <br />
               Vote
             </p>
           )}
-          <p>{`Would you rather ${optionOne.text}?`}</p>
-          <p>{`${optionOne.votesPercent}%`}</p>
-          <p>{`${optionOne.votesNum} out of ${totalVotes} votes`}</p>
+          <p className="question">{`Would you rather ${optionOne.text}?`}</p>
+          <p className="percent"><p style={{width: `${optionOne.votesPercent}%`}}>{`${optionOne.votesPercent}%`}</p></p>
+          <p className="votes">{`${optionOne.votesNum} out of ${totalVotes} votes`}</p>
         </div>
-        <div>
+        <div className="option light-gray-background rounded-borders">
           {authedUserVote === "optionTwo" && (
-            <p>
+            <p className='your-vote'>
               Your
               <br />
               Vote
             </p>
           )}
-          <p>{`Would you rather ${optionTwo.text}?`}</p>
-          <p>{`${optionTwo.votesPercent}%`}</p>
-          <p>{`${optionTwo.votesNum} out of ${totalVotes} votes`}</p>
+          <p className="question">{`Would you rather ${optionTwo.text}?`}</p>
+          <p className="percent"><p style={{width: `${optionTwo.votesPercent}%`}}>{`${optionTwo.votesPercent}%`}</p></p>
+          <p className="votes">{`${optionTwo.votesNum} out of ${totalVotes} votes`}</p>
         </div>
       </div>
     </div>

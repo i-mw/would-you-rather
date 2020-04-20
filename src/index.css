@@ -315,6 +315,7 @@ nav div.session-details {
   border-bottom: 1px solid rgb(194, 193, 193);
 }
 
+
 /* Unanswered question */
 .unanswered-question .author-avatar img {
   width: 90px;
@@ -351,4 +352,72 @@ nav div.session-details {
 
 .unanswered-question .question-preview button:focus {
   outline: 0;
+}
+
+
+/* Answered Question */
+.answered-question .author-avatar img {
+  width: 90px;
+}
+
+.answered-question .question-preview {
+  border-left: 1px solid rgb(194, 193, 193);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.answered-question .question-preview > * {
+  margin: 0;
+}
+
+.answered-question .question-preview > p {
+  font-size: 1.5em !important;
+  margin-bottom: 20px;
+}
+
+.answered-question .option {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 13px;
+}
+
+.answered-question .option:last-child {
+  margin-bottom: 0;
+}
+
+.answered-question .option .your-vote {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  color: white;
+  background-color: rgb(151, 151, 151);
+  border-radius: 100%;
+  padding: 7px;
+  font-size: 0.7em;
+  text-align: center;
+  font-weight: bold
+}
+
+.answered-question .option .question {
+  margin-bottom: 25px;
+}
+
+.answered-question .option .percent {
+  margin-bottom: 8px;
+  background-color: rgb(207, 198, 198);
+  text-align: center;
+}
+
+.answered-question .option .percent p {
+  background-color: gray;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.answered-question .option .votes {
+  color: rgb(61, 61, 61);
 }

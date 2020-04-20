@@ -17,7 +17,7 @@ function mapStateToProps({ users, authedUser }, { qid }) {
   // todo: get question id from Route not from direct props
   
   // todo: remove this line after adding routing
-    authedUser = authedUser ? authedUser : "tylermcginnis";
+    authedUser = authedUser ? authedUser : "sarahedo";
 
   return {
     typeOfQuestion: Object.keys(users[authedUser].answers).includes(qid)
