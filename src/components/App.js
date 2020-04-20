@@ -2,16 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import Nav from "./Nav"
-import QuestionCard from "./QuestionCard"
 import QuestionList from './QuestionList'
 import NewQuestion from './NewQuestion'
-import UserRank from './UserRank'
 import Leaderboard from "./Leaderboard";
-import UnansweredQuestionDetails from './UnansweredQuestionDetails'
-import AnsweredQuestionDetails from "./AnsweredQuestionDetails";
 import QuestionDetails from './QuestionDetails'
 import NotFound from "./NotFound";
 
@@ -23,7 +19,7 @@ class App extends Component {
   }
 
   render() {
-    const { initialLoading, authedUser } = this.props;
+    const { initialLoading } = this.props;
 
     return (
       <>
@@ -48,7 +44,7 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ loadingBar, authedUser, questions }) {
+function mapStateToProps({ authedUser, questions }) {
   return {
     initialLoading: Object.keys(questions).length,
     authedUser,
