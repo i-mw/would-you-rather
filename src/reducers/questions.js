@@ -1,7 +1,7 @@
 import {
   RECEIVE_QUESTIONS,
   ADD_QUESTION_TO_QUESTIONS,
-  ADD_VOTE_TO_QUESTION
+  ADD_VOTE_TO_QUESTION,
 } from "../actions/questions";
 import question from "./question";
 
@@ -12,13 +12,13 @@ export default function questions(state = {}, action) {
     case ADD_QUESTION_TO_QUESTIONS:
       return {
         ...state,
-        [action.question.id]: action.question
-      }
+        [action.question.id]: action.question,
+      };
     case ADD_VOTE_TO_QUESTION:
       return {
         ...state,
-        [action.vote.qid]: question(state[action.vote.qid], action) 
-      }
+        [action.vote.qid]: question(state[action.vote.qid], action),
+      };
     default:
       return state;
   }

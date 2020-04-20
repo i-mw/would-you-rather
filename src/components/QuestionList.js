@@ -17,9 +17,10 @@ class QuestionList extends Component {
   }
 
   render() {
-    const {loggedIn} = this.props;
-    if(!loggedIn) {
-      return <Redirect to={{pathname: '/login', state: {referrer: '/'}}}/>
+    const { loggedIn } = this.props;
+    
+    if (!loggedIn) {
+      return <Redirect to={{ pathname: "/login", state: { referrer: "/" } }} />;
     }
 
     const { showingUnanswered } = this.state;
@@ -29,7 +30,9 @@ class QuestionList extends Component {
       <div className="questions-list rounded-borders">
         <div className="category-select">
           <button
-            className={`${showingUnanswered ? "active-tab" : "inactive-tab"} rounded-borders`}
+            className={`${
+              showingUnanswered ? "active-tab" : "inactive-tab"
+            } rounded-borders`}
             onClick={(e) => {
               this.toggleShowingUnanswered(e, true);
             }}
@@ -37,7 +40,9 @@ class QuestionList extends Component {
             Unanswered Questions
           </button>
           <button
-            className={`${!showingUnanswered ? "active-tab" : "inactive-tab"} rounded-borders`}
+            className={`${
+              !showingUnanswered ? "active-tab" : "inactive-tab"
+            } rounded-borders`}
             onClick={(e) => {
               this.toggleShowingUnanswered(e, false);
             }}
@@ -62,8 +67,8 @@ class QuestionList extends Component {
 function mapStateToProps({ users, questions, authedUser }) {
   if (!authedUser) {
     return {
-      loggedIn: false
-    }
+      loggedIn: false,
+    };
   }
 
   const answeredQuestions = Object.keys(users[authedUser].answers).sort(
@@ -77,7 +82,7 @@ function mapStateToProps({ users, questions, authedUser }) {
   return {
     answeredQuestions,
     unansweredQuestions,
-    loggedIn: true
+    loggedIn: true,
   };
 }
 

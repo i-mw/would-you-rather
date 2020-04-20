@@ -4,11 +4,11 @@ import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
 import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
-import Nav from "./Nav"
-import QuestionList from './QuestionList'
-import NewQuestion from './NewQuestion'
+import Nav from "./Nav";
+import QuestionList from "./QuestionList";
+import NewQuestion from "./NewQuestion";
 import Leaderboard from "./Leaderboard";
-import QuestionDetails from './QuestionDetails'
+import QuestionDetails from "./QuestionDetails";
 import NotFound from "./NotFound";
 
 class App extends Component {
@@ -29,12 +29,16 @@ class App extends Component {
             <Nav />
             <div className="container">
               <Switch>
-                <Route exact path='/' component={QuestionList}/>
-                <Route exact path='/add' component={NewQuestion}/>
-                <Route exact path='/leaderboard' component={Leaderboard}/>
-                <Route exact path='/questions/:id' component={QuestionDetails}/>
-                <Route exact path='/login' component={Login}/>
-                <Route render={() => (<NotFound type='page'/>)}/>
+                <Route exact path="/" component={QuestionList} />
+                <Route exact path="/add" component={NewQuestion} />
+                <Route exact path="/leaderboard" component={Leaderboard} />
+                <Route
+                  exact
+                  path="/questions/:id"
+                  component={QuestionDetails}
+                />
+                <Route exact path="/login" component={Login} />
+                <Route render={() => <NotFound type="page" />} />
               </Switch>
             </div>
           </>

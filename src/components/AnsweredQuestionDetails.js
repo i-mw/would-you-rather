@@ -23,26 +23,34 @@ function AnsweredQuestionDetails(props) {
         <p>Results:</p>
         <div className="option light-gray-background rounded-borders">
           {authedUserVote === "optionOne" && (
-            <p className='your-vote'>
+            <p className="your-vote">
               Your
               <br />
               Vote
             </p>
           )}
           <p className="question">{`Would you rather ${optionOne.text}?`}</p>
-          <div className="percent"><p style={{width: `${optionOne.votesPercent}%`}}>{`${optionOne.votesPercent}%`}</p></div>
+          <div className="percent">
+            <p
+              style={{ width: `${optionOne.votesPercent}%` }}
+            >{`${optionOne.votesPercent}%`}</p>
+          </div>
           <p className="votes">{`${optionOne.votesNum} out of ${totalVotes} votes`}</p>
         </div>
         <div className="option light-gray-background rounded-borders">
           {authedUserVote === "optionTwo" && (
-            <p className='your-vote'>
+            <p className="your-vote">
               Your
               <br />
               Vote
             </p>
           )}
           <p className="question">{`Would you rather ${optionTwo.text}?`}</p>
-          <div className="percent"><p style={{width: `${optionTwo.votesPercent}%`}}>{`${optionTwo.votesPercent}%`}</p></div>
+          <div className="percent">
+            <p
+              style={{ width: `${optionTwo.votesPercent}%` }}
+            >{`${optionTwo.votesPercent}%`}</p>
+          </div>
           <p className="votes">{`${optionTwo.votesNum} out of ${totalVotes} votes`}</p>
         </div>
       </div>
@@ -55,7 +63,7 @@ function mapStateToProps({ users, questions, authedUser }, { qid }) {
   const author = users[question.author];
   const totalVotes =
     question.optionOne.votes.length + question.optionTwo.votes.length;
-  
+
   return {
     userName: author.name,
     userAvatar: author.avatarURL,

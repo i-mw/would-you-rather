@@ -12,9 +12,9 @@ export default function user(state = {}, action) {
         ...state,
         answers: {
           ...state.answers,
-          [action.vote.qid]: action.vote.answer
-        }
-      }
+          [action.vote.qid]: action.vote.answer,
+        },
+      };
     default:
       return state;
   }

@@ -3,7 +3,12 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 function QuestionCard(props) {
-  const { authorName, authorAvatarUrl, questionId, optionOneCroppedText } = props;
+  const {
+    authorName,
+    authorAvatarUrl,
+    questionId,
+    optionOneCroppedText,
+  } = props;
 
   return (
     <>

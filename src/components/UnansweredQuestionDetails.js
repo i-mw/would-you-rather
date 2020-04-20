@@ -34,11 +34,17 @@ class UnansweredQuestionDetails extends Component {
         </div>
         <div className="question-preview">
           <p>Would You Rather ..</p>
-          <button className="dark-gray-background" onClick={(e) => this.handleClick(e, "optionOne")}>
+          <button
+            className="dark-gray-background"
+            onClick={(e) => this.handleClick(e, "optionOne")}
+          >
             {optionOneText}
           </button>
           <p>-OR-</p>
-          <button className="dark-gray-background" onClick={(e) => this.handleClick(e, "optionTwo")}>
+          <button
+            className="dark-gray-background"
+            onClick={(e) => this.handleClick(e, "optionTwo")}
+          >
             {optionTwoText}
           </button>
         </div>

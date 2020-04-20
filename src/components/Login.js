@@ -9,18 +9,18 @@ class Login extends Component {
 
     dispatch(addAuthedUser(id));
     if (location.state && location.state.referrer) {
-      history.push(location.state.referrer)
+      history.push(location.state.referrer);
     } else {
-      history.push('/')
+      history.push("/");
     }
   };
 
   render() {
     // Prevent logged in user from going to login page
-    const {loggedIn} = this.props;
+    const { loggedIn } = this.props;
 
-    if(loggedIn) {
-      return <Redirect to='/'/>
+    if (loggedIn) {
+      return <Redirect to="/" />;
     }
 
     const { users } = this.props;
@@ -60,13 +60,13 @@ class Login extends Component {
 function mapStateToProps({ users, authedUser }) {
   if (authedUser) {
     return {
-      loggedIn: true
-    }
+      loggedIn: true,
+    };
   }
 
   return {
     users,
-    loggedIn: false
+    loggedIn: false,
   };
 }
 

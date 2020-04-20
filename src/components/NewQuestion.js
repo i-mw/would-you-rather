@@ -31,20 +31,23 @@ class NewQuestion extends Component {
     });
 
     // Redirect to home after submitting
-    history.push('/')
+    history.push("/");
   };
 
   render() {
-    const {loggedIn} = this.props;
-    if(!loggedIn) {
-      return <Redirect to={{pathname: '/login', state: {referrer: '/add'}}}/>
+    const { loggedIn } = this.props;
+    
+    if (!loggedIn) {
+      return (
+        <Redirect to={{ pathname: "/login", state: { referrer: "/add" } }} />
+      );
     }
 
     const { optionOne, optionTwo } = this.state;
 
     return (
       <div className="new-question rounded-borders">
-        <h2 className='light-gray-background'>Create New Question</h2>
+        <h2 className="light-gray-background">Create New Question</h2>
         <form onSubmit={this.handleSubmit}>
           <p>Would you rather ...</p>
           <input
@@ -65,8 +68,14 @@ class NewQuestion extends Component {
             onChange={(e) => {
               this.handleChange(e, "optionTwo");
             }}
-          /><br/><br/>
-          <button className="dark-gray-background rounded-borders" type="submit" disabled={optionOne === "" || optionTwo === ""}>
+          />
+          <br />
+          <br />
+          <button
+            className="dark-gray-background rounded-borders"
+            type="submit"
+            disabled={optionOne === "" || optionTwo === ""}
+          >
             Submit
           </button>
         </form>
@@ -78,13 +87,13 @@ class NewQuestion extends Component {
 function mapStateToProps({ authedUser }) {
   if (!authedUser) {
     return {
-      loggedIn: false
-    }
+      loggedIn: false,
+    };
   }
 
   return {
     authedUser,
-    loggedIn: true
+    loggedIn: true,
   };
 }
 
