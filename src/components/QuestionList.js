@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import QuestionCard from "./QuestionCard";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 // todo: possible bug may arise from settings the state here
 // make sure whenever you logout and login again you are
@@ -19,6 +20,11 @@ class QuestionList extends Component {
   }
 
   render() {
+    const {loggedIn} = this.props;
+    if(!loggedIn) {
+      return <Redirect to='/login'/>
+    }
+
     const { showingUnanswered } = this.state;
     const { answeredQuestions, unansweredQuestions } = this.props;
 
@@ -57,8 +63,11 @@ class QuestionList extends Component {
 }
 
 function mapStateToProps({ users, questions, authedUser }) {
-  // todo: remove this line after adding routing
-  authedUser = authedUser ? authedUser : "sarahedo";
+  if (!authedUser) {
+    return {
+      loggedIn: false
+    }
+  }
 
   const answeredQuestions = Object.keys(users[authedUser].answers).sort(
     (a, b) => questions[b].timestamp - questions[a].timestamp
@@ -71,6 +80,7 @@ function mapStateToProps({ users, questions, authedUser }) {
   return {
     answeredQuestions,
     unansweredQuestions,
+    loggedIn: true
   };
 }
 

@@ -1,8 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import UserRank from "./UserRank";
+import { Redirect } from "react-router-dom";
 
 function Leaderboard(props) {
+  const {loggedIn} = props;
+  if(!loggedIn) {
+    return <Redirect to='/login'/>
+  }
+
   const {rankedUserIds} = props
 
   return (
@@ -18,7 +24,13 @@ function Leaderboard(props) {
   )
 }
 
-function mapStateToProps({ users }) {
+function mapStateToProps({ users, authedUser }) {
+  if (!authedUser) {
+    return {
+      loggedIn: false
+    }
+  }
+
   const rankedUserIds = Object.keys(users).sort(
     (a, b) => (
       (users[b].questions.length +
@@ -29,6 +41,7 @@ function mapStateToProps({ users }) {
 
   return {
     rankedUserIds,
+    loggedIn: true
   };
 }
 

@@ -3,8 +3,14 @@ import { connect } from "react-redux";
 import UnansweredQuestionDetails from "./UnansweredQuestionDetails";
 import AnsweredQuestionDetails from "./AnsweredQuestionDetails";
 import NotFound from "./NotFound";
+import { Redirect } from "react-router-dom";
 
 function QuestionDetails(props) {
+  const {loggedIn} = props;
+  if(!loggedIn) {
+    return <Redirect to='/login'/>
+  }
+
   const { typeOfQuestion, qid, questionExist } = props;
 
   if (!questionExist) {
@@ -19,18 +25,22 @@ function QuestionDetails(props) {
 }
 
 function mapStateToProps({ users, authedUser, questions }, { match }) {
+  if (!authedUser) {
+    return {
+      loggedIn: false
+    }
+  }
+
   const qid = match.params.id;
   const questionExist = questions[qid] ? true: false;
-  
-  // todo: remove this line after adding routing
-    authedUser = authedUser ? authedUser : "sarahedo";
 
   return {
     typeOfQuestion: Object.keys(users[authedUser].answers).includes(qid)
       ? "answered"
       : "unanswered",
     qid,
-    questionExist
+    questionExist,
+    loggedIn: true
   };
 }
 

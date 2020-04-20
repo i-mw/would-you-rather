@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "./Login";
 import Nav from "./Nav"
 import QuestionCard from "./QuestionCard"
@@ -24,6 +24,7 @@ class App extends Component {
 
   render() {
     const { initialLoading, authedUser } = this.props;
+    console.log(authedUser);
 
     return (
       <>
@@ -40,21 +41,7 @@ class App extends Component {
                 <Route exact path='/questions/:id' component={QuestionDetails}/>
                 <Route render={() => (<NotFound type='page'/>)}/>
               </Switch>
-
-
-
-              {/* <QuestionList/> */}
-              {/* <NewQuestion/> */}
-              {/* <Leaderboard/> */}
-              {/* <Login/> */}
-              {/* <QuestionDetails qid='8xf0y6ziyjabvozdd253nd'/> */}
-              {/* <NotFound type='page'/> */}
             </div>
-            {/* <p>authed user is: {authedUser}</p> */}
-            {/* <UnansweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
-            {/* <AnsweredQuestionDetails qid={'8xf0y6ziyjabvozdd253nd'}/> */}
-            {/* <UserRank id='sarahedo' rank={2}/> */}
-            {/* <QuestionCard id='xj352vofupe1dqz9emx13r'/> */}
           </>
         )}
       </>
