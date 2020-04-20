@@ -5,10 +5,15 @@ import { addAuthedUser } from "../actions/authedUser";
 // todo: Redirect if the user is already logged in
 class Login extends Component {
   login = (e, id) => {
-    const { dispatch } = this.props;
+    const { dispatch, history, location } = this.props;
 
     dispatch(addAuthedUser(id));
     // todo: Redirect to where the user came from
+    if (location.state && location.state.referrer) {
+      history.push(location.state.referrer)
+    } else {
+      history.push('/')
+    }
   };
 
   render() {

@@ -36,7 +36,7 @@ class NewQuestion extends Component {
   render() {
     const {loggedIn} = this.props;
     if(!loggedIn) {
-      return <Redirect to='/login'/>
+      return <Redirect to={{pathname: '/login', state: {referrer: '/add'}}}/>
     }
 
     const { optionOne, optionTwo } = this.state;

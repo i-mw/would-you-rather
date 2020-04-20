@@ -6,12 +6,13 @@ import NotFound from "./NotFound";
 import { Redirect } from "react-router-dom";
 
 function QuestionDetails(props) {
-  const {loggedIn} = props;
+  const {loggedIn, qid} = props;
+
   if(!loggedIn) {
-    return <Redirect to='/login'/>
+    return <Redirect to={{pathname: '/login', state: {referrer: `/questions/${qid}`}}}/>
   }
 
-  const { typeOfQuestion, qid, questionExist } = props;
+  const { typeOfQuestion, questionExist } = props;
 
   if (!questionExist) {
     return <NotFound type="question"/>
@@ -25,13 +26,15 @@ function QuestionDetails(props) {
 }
 
 function mapStateToProps({ users, authedUser, questions }, { match }) {
+  const qid = match.params.id;
+
   if (!authedUser) {
     return {
-      loggedIn: false
+      loggedIn: false,
+      qid
     }
   }
 
-  const qid = match.params.id;
   const questionExist = questions[qid] ? true: false;
 
   return {

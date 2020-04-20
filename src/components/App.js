@@ -24,7 +24,6 @@ class App extends Component {
 
   render() {
     const { initialLoading, authedUser } = this.props;
-    console.log(authedUser);
 
     return (
       <>
@@ -37,8 +36,8 @@ class App extends Component {
                 <Route exact path='/' component={QuestionList}/>
                 <Route exact path='/add' component={NewQuestion}/>
                 <Route exact path='/leaderboard' component={Leaderboard}/>
-                <Route exact path='/login' component={Login}/>
                 <Route exact path='/questions/:id' component={QuestionDetails}/>
+                <Route exact path='/login' component={Login}/>
                 <Route render={() => (<NotFound type='page'/>)}/>
               </Switch>
             </div>

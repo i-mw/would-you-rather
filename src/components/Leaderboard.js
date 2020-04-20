@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 function Leaderboard(props) {
   const {loggedIn} = props;
   if(!loggedIn) {
-    return <Redirect to='/login'/>
+    return <Redirect to={{pathname: '/login', state: {referrer: '/leaderboard'}}}/>
   }
 
   const {rankedUserIds} = props
