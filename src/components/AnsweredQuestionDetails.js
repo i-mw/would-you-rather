@@ -30,7 +30,7 @@ function AnsweredQuestionDetails(props) {
             </p>
           )}
           <p className="question">{`Would you rather ${optionOne.text}?`}</p>
-          <p className="percent"><p style={{width: `${optionOne.votesPercent}%`}}>{`${optionOne.votesPercent}%`}</p></p>
+          <div className="percent"><p style={{width: `${optionOne.votesPercent}%`}}>{`${optionOne.votesPercent}%`}</p></div>
           <p className="votes">{`${optionOne.votesNum} out of ${totalVotes} votes`}</p>
         </div>
         <div className="option light-gray-background rounded-borders">
@@ -42,7 +42,7 @@ function AnsweredQuestionDetails(props) {
             </p>
           )}
           <p className="question">{`Would you rather ${optionTwo.text}?`}</p>
-          <p className="percent"><p style={{width: `${optionTwo.votesPercent}%`}}>{`${optionTwo.votesPercent}%`}</p></p>
+          <div className="percent"><p style={{width: `${optionTwo.votesPercent}%`}}>{`${optionTwo.votesPercent}%`}</p></div>
           <p className="votes">{`${optionTwo.votesNum} out of ${totalVotes} votes`}</p>
         </div>
       </div>
