@@ -9,7 +9,6 @@ class Nav extends Component {
     const { dispatch } = this.props;
 
     dispatch(removeAuthedUser());
-    //todo: Redirect to login page
   };
 
   render() {

@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addAuthedUser } from "../actions/authedUser";
+import { Redirect } from "react-router-dom";
 
-// todo: Redirect if the user is already logged in
 class Login extends Component {
   login = (e, id) => {
     const { dispatch, history, location } = this.props;
 
     dispatch(addAuthedUser(id));
-    // todo: Redirect to where the user came from
     if (location.state && location.state.referrer) {
       history.push(location.state.referrer)
     } else {
@@ -17,6 +16,13 @@ class Login extends Component {
   };
 
   render() {
+    // Prevent logged in user from going to login page
+    const {loggedIn} = this.props;
+
+    if(loggedIn) {
+      return <Redirect to='/'/>
+    }
+
     const { users } = this.props;
 
     return (
@@ -51,9 +57,16 @@ class Login extends Component {
   }
 }
 
-function mapStateToProps({ users }) {
+function mapStateToProps({ users, authedUser }) {
+  if (authedUser) {
+    return {
+      loggedIn: true
+    }
+  }
+
   return {
     users,
+    loggedIn: false
   };
 }
 
