@@ -3,9 +3,6 @@ import QuestionCard from "./QuestionCard";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-// todo: possible bug may arise from settings the state here
-// make sure whenever you logout and login again you are
-// shown the unanswered questions first ( be default) 
 class QuestionList extends Component {
   state = {
     showingUnanswered: true,
